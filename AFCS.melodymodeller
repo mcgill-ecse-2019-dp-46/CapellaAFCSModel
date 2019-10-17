@@ -13,6 +13,7 @@
     xmlns:org.polarsys.capella.core.data.information="http://www.polarsys.org/capella/core/information/1.3.0"
     xmlns:org.polarsys.capella.core.data.information.datatype="http://www.polarsys.org/capella/core/information/datatype/1.3.0"
     xmlns:org.polarsys.capella.core.data.information.datavalue="http://www.polarsys.org/capella/core/information/datavalue/1.3.0"
+    xmlns:org.polarsys.capella.core.data.interaction="http://www.polarsys.org/capella/core/interaction/1.3.0"
     xmlns:org.polarsys.capella.core.data.la="http://www.polarsys.org/capella/core/la/1.3.0"
     xmlns:org.polarsys.capella.core.data.oa="http://www.polarsys.org/capella/core/oa/1.3.0"
     xmlns:org.polarsys.capella.core.data.pa="http://www.polarsys.org/capella/core/pa/1.3.0"
@@ -59,14 +60,14 @@
           <ownedFunctions xsi:type="org.polarsys.capella.core.data.oa:OperationalActivity"
               id="66d845bb-f3b5-477a-835e-da959d1bd6ce" name="Configure Autopilot">
             <ownedFunctions xsi:type="org.polarsys.capella.core.data.oa:OperationalActivity"
-                id="2d3b106d-ff52-4431-8779-47b060857d27" name="Set Autopilot Mode"/>
+                id="2d3b106d-ff52-4431-8779-47b060857d27" name="Disable Autopilot Mode"/>
+            <ownedFunctions xsi:type="org.polarsys.capella.core.data.oa:OperationalActivity"
+                id="cd440094-463c-4a16-bbb1-7863d8fa5ebc" name="Enable Autopilot Mode"/>
           </ownedFunctions>
           <ownedFunctions xsi:type="org.polarsys.capella.core.data.oa:OperationalActivity"
               id="167bf6af-4da4-40fc-b39f-55c444b1883e" name="ControlNavigation">
             <ownedFunctions xsi:type="org.polarsys.capella.core.data.oa:OperationalActivity"
                 id="ff6194ae-9335-4a95-8c14-5dbdb764eaf9" name="Set Yaw Damper Mode"/>
-            <ownedFunctions xsi:type="org.polarsys.capella.core.data.oa:OperationalActivity"
-                id="a33d9452-9a95-4b8e-a5fa-f494275361bb" name="Automatic Takeoff"/>
             <ownedFunctions xsi:type="org.polarsys.capella.core.data.oa:OperationalActivity"
                 id="719a8740-0d1c-47f0-b1a3-d2f4dd63c0b3" name="Automatic Landing"/>
             <ownedFunctions xsi:type="org.polarsys.capella.core.data.oa:OperationalActivity"
@@ -90,6 +91,8 @@
           id="93586504-bdf7-41f8-9dae-91f6c2134814" name="Operational Capabilities">
         <ownedOperationalCapabilities xsi:type="org.polarsys.capella.core.data.oa:OperationalCapability"
             id="8d0cdfa6-e059-4c91-b969-7699caa23fa3" name="Set Flight Path">
+          <ownedAbstractFunctionAbstractCapabilityInvolvements xsi:type="org.polarsys.capella.core.data.interaction:AbstractFunctionAbstractCapabilityInvolvement"
+              id="9036ce57-4bd2-49a6-8f7f-7a1c6c62de63" involved="#d012a704-61a9-4233-8262-320c485fa032"/>
           <ownedEntityOperationalCapabilityInvolvements xsi:type="org.polarsys.capella.core.data.oa:EntityOperationalCapabilityInvolvement"
               id="30ed4a56-a7f4-4e78-97b0-cc83381fc7a3" involved="#2ff6ec68-0c73-4e44-9456-2b7a9f3a09a6"/>
         </ownedOperationalCapabilities>
@@ -133,9 +136,6 @@
               sourceElement="#2ff6ec68-0c73-4e44-9456-2b7a9f3a09a6"/>
           <ownedFunctionalAllocation xsi:type="org.polarsys.capella.core.data.fa:ComponentFunctionalAllocation"
               id="c9ce0f60-2bc5-4cdb-9d4f-ef85cc9e62c4" targetElement="#ff6194ae-9335-4a95-8c14-5dbdb764eaf9"
-              sourceElement="#2ff6ec68-0c73-4e44-9456-2b7a9f3a09a6"/>
-          <ownedFunctionalAllocation xsi:type="org.polarsys.capella.core.data.fa:ComponentFunctionalAllocation"
-              id="033b5593-bc77-406e-9e8f-acf479ddd8d2" targetElement="#a33d9452-9a95-4b8e-a5fa-f494275361bb"
               sourceElement="#2ff6ec68-0c73-4e44-9456-2b7a9f3a09a6"/>
           <ownedFunctionalAllocation xsi:type="org.polarsys.capella.core.data.fa:ComponentFunctionalAllocation"
               id="d2b7a5df-d410-406c-b842-1d3b998d4c9f" targetElement="#719a8740-0d1c-47f0-b1a3-d2f4dd63c0b3"

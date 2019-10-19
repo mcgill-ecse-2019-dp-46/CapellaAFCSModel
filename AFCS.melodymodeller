@@ -63,6 +63,8 @@
                 id="2d3b106d-ff52-4431-8779-47b060857d27" name="Disable Autopilot Mode"/>
             <ownedFunctions xsi:type="org.polarsys.capella.core.data.oa:OperationalActivity"
                 id="cd440094-463c-4a16-bbb1-7863d8fa5ebc" name="Enable Autopilot Mode"/>
+            <ownedFunctions xsi:type="org.polarsys.capella.core.data.oa:OperationalActivity"
+                id="bcdde495-fe55-4d3e-a980-76adb0236514" name="Set Autopilot Parameters"/>
           </ownedFunctions>
           <ownedFunctions xsi:type="org.polarsys.capella.core.data.oa:OperationalActivity"
               id="167bf6af-4da4-40fc-b39f-55c444b1883e" name="ControlNavigation">
@@ -73,6 +75,8 @@
             <ownedFunctions xsi:type="org.polarsys.capella.core.data.oa:OperationalActivity"
                 id="48bec25c-16c9-4f8e-a436-fa32620ac3de" name="Set Pitch Trim"/>
           </ownedFunctions>
+          <ownedFunctions xsi:type="org.polarsys.capella.core.data.oa:OperationalActivity"
+              id="b33755f3-2b68-4143-99e1-0fdeddb8532c" name="Interupt Autopilot"/>
           <ownedFunctionalExchanges xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchange"
               id="8fd5196e-4267-4555-b5c2-e9cd07057ccf" name="Altitude Stablization"
               target="#48bec25c-16c9-4f8e-a436-fa32620ac3de" source="#a9acfa8c-1581-4b05-8114-1d5e43a315b0"/>
@@ -95,9 +99,15 @@
               id="9036ce57-4bd2-49a6-8f7f-7a1c6c62de63" involved="#d012a704-61a9-4233-8262-320c485fa032"/>
           <ownedEntityOperationalCapabilityInvolvements xsi:type="org.polarsys.capella.core.data.oa:EntityOperationalCapabilityInvolvement"
               id="30ed4a56-a7f4-4e78-97b0-cc83381fc7a3" involved="#2ff6ec68-0c73-4e44-9456-2b7a9f3a09a6"/>
+          <ownedEntityOperationalCapabilityInvolvements xsi:type="org.polarsys.capella.core.data.oa:EntityOperationalCapabilityInvolvement"
+              id="33f4cbd2-bed3-4463-bf53-16ffff5e480f" involved="#c968ff9f-1f1d-4033-be09-4ba9ce428985"/>
+          <ownedEntityOperationalCapabilityInvolvements xsi:type="org.polarsys.capella.core.data.oa:EntityOperationalCapabilityInvolvement"
+              id="6671d8ec-facb-46af-8ebf-e6e756355896" involved="#3e5ccadd-e7eb-42d2-8ac5-1b5de3860af3"/>
         </ownedOperationalCapabilities>
         <ownedOperationalCapabilities xsi:type="org.polarsys.capella.core.data.oa:OperationalCapability"
             id="c11899ca-a6ab-4b26-ad4c-50a46af3261c" name="Configure Autopilot">
+          <extends xsi:type="org.polarsys.capella.core.data.interaction:AbstractCapabilityExtend"
+              id="23219973-1428-4275-9734-7b8d1e92692c" extended="#d5b97bd5-6b28-401d-aa75-c430074a67fe"/>
           <ownedEntityOperationalCapabilityInvolvements xsi:type="org.polarsys.capella.core.data.oa:EntityOperationalCapabilityInvolvement"
               id="253c6f48-93d5-41bb-880a-bd3da9aa7f49" involved="#2ff6ec68-0c73-4e44-9456-2b7a9f3a09a6"/>
         </ownedOperationalCapabilities>
@@ -105,6 +115,20 @@
             id="0edd7946-daba-4c5a-9f03-2a731b667022" name="Control Navigation">
           <ownedEntityOperationalCapabilityInvolvements xsi:type="org.polarsys.capella.core.data.oa:EntityOperationalCapabilityInvolvement"
               id="c49bf32e-7734-4c34-82ce-6df778cf869d" involved="#2ff6ec68-0c73-4e44-9456-2b7a9f3a09a6"/>
+          <ownedEntityOperationalCapabilityInvolvements xsi:type="org.polarsys.capella.core.data.oa:EntityOperationalCapabilityInvolvement"
+              id="43ccc955-2455-49c5-bb96-c38250b4f303" involved="#c968ff9f-1f1d-4033-be09-4ba9ce428985"/>
+          <ownedEntityOperationalCapabilityInvolvements xsi:type="org.polarsys.capella.core.data.oa:EntityOperationalCapabilityInvolvement"
+              id="549d5bf5-7407-4821-a9c3-9336f6b13cf0" involved="#3e5ccadd-e7eb-42d2-8ac5-1b5de3860af3"/>
+        </ownedOperationalCapabilities>
+        <ownedOperationalCapabilities xsi:type="org.polarsys.capella.core.data.oa:OperationalCapability"
+            id="d5b97bd5-6b28-401d-aa75-c430074a67fe" name="Set Autopilot Parameters">
+          <ownedEntityOperationalCapabilityInvolvements xsi:type="org.polarsys.capella.core.data.oa:EntityOperationalCapabilityInvolvement"
+              id="8b9b9fd2-3b5a-4c18-9405-1e94cd96b206" involved="#4d5742bf-2ef1-4912-a692-2af10a3504f2"/>
+        </ownedOperationalCapabilities>
+        <ownedOperationalCapabilities xsi:type="org.polarsys.capella.core.data.oa:OperationalCapability"
+            id="1a06d64a-8737-4556-836f-5cc03b354106" name="Interupt Autopilot">
+          <ownedEntityOperationalCapabilityInvolvements xsi:type="org.polarsys.capella.core.data.oa:EntityOperationalCapabilityInvolvement"
+              id="8c057dde-ae0b-4310-8546-82387222b924" involved="#89154189-70e9-4dee-8b39-8d2a4dc3651e"/>
         </ownedOperationalCapabilities>
       </ownedAbstractCapabilityPkg>
       <ownedInterfacePkg xsi:type="org.polarsys.capella.core.data.cs:InterfacePkg"
@@ -115,6 +139,12 @@
           id="47de10a0-1c8b-4872-95f2-d0dacf74e9aa" name="Operational Context">
         <ownedFeatures xsi:type="org.polarsys.capella.core.data.cs:Part" id="04321e34-8fe4-44fb-bfac-c92ffdad7942"
             name="Pilot" abstractType="#2ff6ec68-0c73-4e44-9456-2b7a9f3a09a6"/>
+        <ownedFeatures xsi:type="org.polarsys.capella.core.data.cs:Part" id="9681960e-521f-4a55-8d59-497de891cdd1"
+            name="Safety System" abstractType="#89154189-70e9-4dee-8b39-8d2a4dc3651e"/>
+        <ownedFeatures xsi:type="org.polarsys.capella.core.data.cs:Part" id="631061f6-5eb0-4ee4-a397-f8c062617228"
+            name="AFCS" abstractType="#c968ff9f-1f1d-4033-be09-4ba9ce428985"/>
+        <ownedFeatures xsi:type="org.polarsys.capella.core.data.cs:Part" id="4e79dee1-4920-4ddd-87af-386b13a5a886"
+            name="Air Data System" abstractType="#4d5742bf-2ef1-4912-a692-2af10a3504f2"/>
       </ownedOperationalContext>
       <ownedRolePkg xsi:type="org.polarsys.capella.core.data.oa:RolePkg" id="6791c35e-f0c8-426c-9e8f-6ebf5716bc65"
           name="Roles"/>
@@ -146,6 +176,32 @@
           <ownedFunctionalAllocation xsi:type="org.polarsys.capella.core.data.fa:ComponentFunctionalAllocation"
               id="2f93015c-b921-4d96-b669-9c0fed1ffae7" targetElement="#a7a38a48-ed57-48fc-9a8b-6e4a757b5503"
               sourceElement="#2ff6ec68-0c73-4e44-9456-2b7a9f3a09a6"/>
+          <ownedFunctionalAllocation xsi:type="org.polarsys.capella.core.data.fa:ComponentFunctionalAllocation"
+              id="a4028df9-e75f-4add-a660-26e64a159b01" targetElement="#cd440094-463c-4a16-bbb1-7863d8fa5ebc"
+              sourceElement="#2ff6ec68-0c73-4e44-9456-2b7a9f3a09a6"/>
+        </ownedEntities>
+        <ownedEntities xsi:type="org.polarsys.capella.core.data.oa:Entity" id="89154189-70e9-4dee-8b39-8d2a4dc3651e"
+            name="Safety System">
+          <ownedFunctionalAllocation xsi:type="org.polarsys.capella.core.data.fa:ComponentFunctionalAllocation"
+              id="a17f6af8-ba6a-4c1d-be18-ad9fca4c8403" targetElement="#b33755f3-2b68-4143-99e1-0fdeddb8532c"
+              sourceElement="#89154189-70e9-4dee-8b39-8d2a4dc3651e"/>
+        </ownedEntities>
+        <ownedEntities xsi:type="org.polarsys.capella.core.data.oa:Entity" id="3e5ccadd-e7eb-42d2-8ac5-1b5de3860af3"
+            name="Flight Director"/>
+        <ownedEntities xsi:type="org.polarsys.capella.core.data.oa:Entity" id="c968ff9f-1f1d-4033-be09-4ba9ce428985"
+            name="AFCS">
+          <ownedFeatures xsi:type="org.polarsys.capella.core.data.cs:Part" id="4d225aa9-1e42-4d1d-bf1d-a38f402d4987"
+              name="Autopilot" abstractType="#c9e010cc-acf7-4089-a83f-2e32aa76b4a3"/>
+          <ownedFeatures xsi:type="org.polarsys.capella.core.data.cs:Part" id="50bfebd9-ea36-4e08-9466-7c292c9b7b64"
+              name="Flight Director" abstractType="#3e5ccadd-e7eb-42d2-8ac5-1b5de3860af3"/>
+        </ownedEntities>
+        <ownedEntities xsi:type="org.polarsys.capella.core.data.oa:Entity" id="c9e010cc-acf7-4089-a83f-2e32aa76b4a3"
+            name="Autopilot"/>
+        <ownedEntities xsi:type="org.polarsys.capella.core.data.oa:Entity" id="4d5742bf-2ef1-4912-a692-2af10a3504f2"
+            name="Air Data System">
+          <ownedFunctionalAllocation xsi:type="org.polarsys.capella.core.data.fa:ComponentFunctionalAllocation"
+              id="72a44bd9-6d11-4e8b-b11f-0670ec4af7c2" targetElement="#bcdde495-fe55-4d3e-a980-76adb0236514"
+              sourceElement="#4d5742bf-2ef1-4912-a692-2af10a3504f2"/>
         </ownedEntities>
       </ownedEntityPkg>
     </ownedArchitectures>

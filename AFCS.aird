@@ -1732,25 +1732,9 @@
           <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_YiKrZuWjEemddvTHt-7G8Q" id="(0.6081081081081081,1.0)"/>
           <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_YiKrZ-WjEemddvTHt-7G8Q" id="(0.45161290322580644,0.0)"/>
         </edges>
-        <edges xmi:type="notation:Edge" xmi:id="_hHcfIOWjEemddvTHt-7G8Q" type="4001" element="_hHBBUOWjEemddvTHt-7G8Q" source="_x97wkOWiEemddvTHt-7G8Q" target="_gml00OWjEemddvTHt-7G8Q">
-          <children xmi:type="notation:Node" xmi:id="_hHcfJOWjEemddvTHt-7G8Q" type="6001">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_hHcfJeWjEemddvTHt-7G8Q" x="1" y="87"/>
-          </children>
-          <children xmi:type="notation:Node" xmi:id="_hHcfJuWjEemddvTHt-7G8Q" type="6002">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_hHcfJ-WjEemddvTHt-7G8Q" x="6" y="7"/>
-          </children>
-          <children xmi:type="notation:Node" xmi:id="_hHdGMOWjEemddvTHt-7G8Q" type="6003">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_hHdGMeWjEemddvTHt-7G8Q" x="7" y="7"/>
-          </children>
-          <styles xmi:type="notation:ConnectorStyle" xmi:id="_hHcfIeWjEemddvTHt-7G8Q"/>
-          <styles xmi:type="notation:FontStyle" xmi:id="_hHcfIuWjEemddvTHt-7G8Q" fontColor="4210779" fontName="Segoe UI" fontHeight="8"/>
-          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_hHcfI-WjEemddvTHt-7G8Q" points="[0, 0, 0, -79]$[0, 79, 0, 0]"/>
-          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_hHdGMuWjEemddvTHt-7G8Q" id="(0.9512485136741974,1.0)"/>
-          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_hHdGM-WjEemddvTHt-7G8Q" id="(0.5405405405405406,0.0)"/>
-        </edges>
       </data>
     </ownedAnnotationEntries>
-    <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_x94GMeWiEemddvTHt-7G8Q" name="Set Flight Path" outgoingEdges="_hHBBUOWjEemddvTHt-7G8Q">
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_x94GMeWiEemddvTHt-7G8Q" name="Set Flight Path">
       <target xmi:type="org.polarsys.capella.core.data.oa:OperationalActivity" href="AFCS.melodymodeller#d012a704-61a9-4233-8262-320c485fa032"/>
       <semanticElements xmi:type="org.polarsys.capella.core.data.oa:OperationalActivity" href="AFCS.melodymodeller#d012a704-61a9-4233-8262-320c485fa032"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
@@ -1854,7 +1838,7 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.polarsys.capella.core.sirius.analysis/description/oa.odesign#//@ownedViewpoints[name='Operational%20Analysis']/@ownedRepresentations[name='Operational%20Activity%20Interaction%20Blank']/@defaultLayer/@edgeMappings[name='OAIB%20Interaction']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_gmg8UeWjEemddvTHt-7G8Q" name="Disable Autopilot Mode" incomingEdges="_hHBBUOWjEemddvTHt-7G8Q">
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_gmg8UeWjEemddvTHt-7G8Q" name="Disable Autopilot Mode">
       <target xmi:type="org.polarsys.capella.core.data.oa:OperationalActivity" href="AFCS.melodymodeller#2d3b106d-ff52-4431-8779-47b060857d27"/>
       <semanticElements xmi:type="org.polarsys.capella.core.data.oa:OperationalActivity" href="AFCS.melodymodeller#2d3b106d-ff52-4431-8779-47b060857d27"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
@@ -1864,15 +1848,6 @@
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.polarsys.capella.core.sirius.analysis/description/oa.odesign#//@ownedViewpoints[name='Operational%20Analysis']/@ownedRepresentations[name='Operational%20Activity%20Interaction%20Blank']/@defaultLayer/@containerMappings[name='OAIB%20Operational%20Activity']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.polarsys.capella.core.sirius.analysis/description/oa.odesign#//@ownedViewpoints[name='Operational%20Analysis']/@ownedRepresentations[name='Operational%20Activity%20Interaction%20Blank']/@defaultLayer/@containerMappings[name='OAIB%20Operational%20Activity']"/>
-    </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_hHBBUOWjEemddvTHt-7G8Q" name="Enable/Disable Autopilot" sourceNode="_x94GMeWiEemddvTHt-7G8Q" targetNode="_gmg8UeWjEemddvTHt-7G8Q">
-      <target xmi:type="org.polarsys.capella.core.data.fa:FunctionalExchange" href="AFCS.melodymodeller#819b871e-f8e0-444f-a767-5e489d23288f"/>
-      <semanticElements xmi:type="org.polarsys.capella.core.data.fa:FunctionalExchange" href="AFCS.melodymodeller#819b871e-f8e0-444f-a767-5e489d23288f"/>
-      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_hHBoYOWjEemddvTHt-7G8Q" strokeColor="91,64,64">
-        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.polarsys.capella.core.sirius.analysis/description/oa.odesign#//@ownedViewpoints[name='Operational%20Analysis']/@ownedRepresentations[name='Operational%20Activity%20Interaction%20Blank']/@defaultLayer/@edgeMappings[name='OAIB%20Interaction']/@style"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_hHBoYeWjEemddvTHt-7G8Q" labelColor="91,64,64"/>
-      </ownedStyle>
-      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.polarsys.capella.core.sirius.analysis/description/oa.odesign#//@ownedViewpoints[name='Operational%20Analysis']/@ownedRepresentations[name='Operational%20Activity%20Interaction%20Blank']/@defaultLayer/@edgeMappings[name='OAIB%20Interaction']"/>
     </ownedDiagramElements>
     <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.polarsys.capella.core.sirius.analysis/description/oa.odesign#//@ownedViewpoints[name='Operational%20Analysis']/@ownedRepresentations[name='Operational%20Activity%20Interaction%20Blank']"/>
     <activatedFilters xmi:type="filter:CompositeFilterDescription" href="platform:/plugin/org.polarsys.kitalpha.ad.integration.sirius/description/ad.odesign#//@ownedViewpoints[name='ad']/@ownedRepresentations[name='AD%20diagram']/@filters[name='ModelExtensionFilter']"/>

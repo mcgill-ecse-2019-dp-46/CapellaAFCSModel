@@ -86,9 +86,6 @@
           <ownedFunctionalExchanges xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchange"
               id="569564d3-529b-4a51-b0d2-3af48554a5da" name="Control Yaw" target="#ff6194ae-9335-4a95-8c14-5dbdb764eaf9"
               source="#48efc4e4-6719-4083-95a5-b62a680213b1"/>
-          <ownedFunctionalExchanges xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchange"
-              id="819b871e-f8e0-444f-a767-5e489d23288f" name="Enable/Disable Autopilot"
-              target="#2d3b106d-ff52-4431-8779-47b060857d27" source="#d012a704-61a9-4233-8262-320c485fa032"/>
         </ownedOperationalActivities>
       </ownedFunctionPkg>
       <ownedAbstractCapabilityPkg xsi:type="org.polarsys.capella.core.data.oa:OperationalCapabilityPkg"

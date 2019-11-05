@@ -211,6 +211,66 @@
             description="            ">
           <ownedFunctions xsi:type="org.polarsys.capella.core.data.ctx:SystemFunction"
               id="3ad9e5b5-8fe8-4e5d-882c-eac6c95dc78a" name="Set Flight Path" description="            ">
+            <ownedFunctionalChains xsi:type="org.polarsys.capella.core.data.fa:FunctionalChain"
+                id="4996b882-bcc8-4ce5-8fd1-7a70de5401be" name="Configure Speed Parameters">
+              <ownedFunctionalChainInvolvements xsi:type="org.polarsys.capella.core.data.fa:FunctionalChainInvolvementLink"
+                  id="0b67b835-7752-4aaf-aa46-2ad48aa59892" involved="#0c61d4bb-0dcd-4feb-bd26-068a80bfb0cd"
+                  source="#471e3e13-3142-40ab-a7d9-d98cab84ed08" target="#cf9f42ae-359d-4092-b5d6-b84e7658b5d6"/>
+              <ownedFunctionalChainInvolvements xsi:type="org.polarsys.capella.core.data.fa:FunctionalChainInvolvementFunction"
+                  id="cf9f42ae-359d-4092-b5d6-b84e7658b5d6" involved="#c34d6c84-5891-4358-8fc3-a89b543762dd"/>
+              <ownedFunctionalChainInvolvements xsi:type="org.polarsys.capella.core.data.fa:FunctionalChainInvolvementFunction"
+                  id="471e3e13-3142-40ab-a7d9-d98cab84ed08" involved="#a8205761-da70-41f6-826c-848b2e34ef55"/>
+              <ownedFunctionalChainInvolvements xsi:type="org.polarsys.capella.core.data.fa:FunctionalChainInvolvementLink"
+                  id="636c41ae-4574-44cf-ab2f-10399470b686" involved="#41e56e21-f01f-4d37-b7e2-17eebe890584"
+                  source="#cf9f42ae-359d-4092-b5d6-b84e7658b5d6" target="#2cedd49a-c1b8-48f5-8cfc-c961c5c1a551"/>
+              <ownedFunctionalChainInvolvements xsi:type="org.polarsys.capella.core.data.fa:FunctionalChainInvolvementFunction"
+                  id="2cedd49a-c1b8-48f5-8cfc-c961c5c1a551" involved="#ad9c18fb-d482-4a4d-811e-d3c0180441ad"/>
+              <ownedFunctionalChainInvolvements xsi:type="org.polarsys.capella.core.data.fa:FunctionalChainInvolvementLink"
+                  id="e2430ffb-2e82-4dd4-8f1d-541b61fd6185" involved="#71d81d3b-7e99-41c1-9ca1-5715882bf87f"
+                  source="#2cedd49a-c1b8-48f5-8cfc-c961c5c1a551" target="#150e6e81-0bff-495e-8a21-6e752f8b092f"/>
+              <ownedFunctionalChainInvolvements xsi:type="org.polarsys.capella.core.data.fa:FunctionalChainInvolvementFunction"
+                  id="150e6e81-0bff-495e-8a21-6e752f8b092f" involved="#7d3a54e7-3df7-45b7-b50f-a8b9bd493276"/>
+            </ownedFunctionalChains>
+            <ownedFunctionalChains xsi:type="org.polarsys.capella.core.data.fa:FunctionalChain"
+                id="31b0d894-8dee-4990-a30b-05ad8b4cb1c5" name="Configure Altitude Parameters">
+              <ownedFunctionalChainInvolvements xsi:type="org.polarsys.capella.core.data.fa:FunctionalChainInvolvementLink"
+                  id="3433662b-ec75-4651-9e0d-700709c92eeb" involved="#0c61d4bb-0dcd-4feb-bd26-068a80bfb0cd"
+                  source="#7c3c928e-0b21-4b09-8868-610eaa69ae32" target="#9d129cc3-021c-4b0d-91d9-d4f9ddea5f9a"/>
+              <ownedFunctionalChainInvolvements xsi:type="org.polarsys.capella.core.data.fa:FunctionalChainInvolvementFunction"
+                  id="9d129cc3-021c-4b0d-91d9-d4f9ddea5f9a" involved="#c34d6c84-5891-4358-8fc3-a89b543762dd"/>
+              <ownedFunctionalChainInvolvements xsi:type="org.polarsys.capella.core.data.fa:FunctionalChainInvolvementFunction"
+                  id="7c3c928e-0b21-4b09-8868-610eaa69ae32" involved="#a8205761-da70-41f6-826c-848b2e34ef55"/>
+              <ownedFunctionalChainInvolvements xsi:type="org.polarsys.capella.core.data.fa:FunctionalChainInvolvementLink"
+                  id="e49f614d-3f80-4027-90ab-c7ad6c6d5082" involved="#41e56e21-f01f-4d37-b7e2-17eebe890584"
+                  source="#9d129cc3-021c-4b0d-91d9-d4f9ddea5f9a" target="#2bcb5536-93a2-4a14-b4cf-aa42d45fa146"/>
+              <ownedFunctionalChainInvolvements xsi:type="org.polarsys.capella.core.data.fa:FunctionalChainInvolvementFunction"
+                  id="2bcb5536-93a2-4a14-b4cf-aa42d45fa146" involved="#ad9c18fb-d482-4a4d-811e-d3c0180441ad"/>
+              <ownedFunctionalChainInvolvements xsi:type="org.polarsys.capella.core.data.fa:FunctionalChainInvolvementLink"
+                  id="704c2d4e-7fcd-4ab5-aa82-b502cbfb7592" involved="#745ab491-fbfd-487d-8960-a910c9e700e1"
+                  source="#2bcb5536-93a2-4a14-b4cf-aa42d45fa146" target="#dccd4b43-b804-48d8-b3d6-4c540a350663"/>
+              <ownedFunctionalChainInvolvements xsi:type="org.polarsys.capella.core.data.fa:FunctionalChainInvolvementFunction"
+                  id="dccd4b43-b804-48d8-b3d6-4c540a350663" involved="#7d3a54e7-3df7-45b7-b50f-a8b9bd493276"/>
+            </ownedFunctionalChains>
+            <ownedFunctionalChains xsi:type="org.polarsys.capella.core.data.fa:FunctionalChain"
+                id="90ced448-33c4-413d-9b4a-8cc505a58d9d" name="Configure Yaw Parameters">
+              <ownedFunctionalChainInvolvements xsi:type="org.polarsys.capella.core.data.fa:FunctionalChainInvolvementLink"
+                  id="133c3e43-d9af-4f34-b391-8b6c48f18d86" involved="#0c61d4bb-0dcd-4feb-bd26-068a80bfb0cd"
+                  source="#ba74f0cf-43eb-478b-8bb8-7d3b73fd6f1b" target="#5a2ce829-e22f-43de-b42b-ae9e62f32c1c"/>
+              <ownedFunctionalChainInvolvements xsi:type="org.polarsys.capella.core.data.fa:FunctionalChainInvolvementFunction"
+                  id="5a2ce829-e22f-43de-b42b-ae9e62f32c1c" involved="#c34d6c84-5891-4358-8fc3-a89b543762dd"/>
+              <ownedFunctionalChainInvolvements xsi:type="org.polarsys.capella.core.data.fa:FunctionalChainInvolvementFunction"
+                  id="ba74f0cf-43eb-478b-8bb8-7d3b73fd6f1b" involved="#a8205761-da70-41f6-826c-848b2e34ef55"/>
+              <ownedFunctionalChainInvolvements xsi:type="org.polarsys.capella.core.data.fa:FunctionalChainInvolvementLink"
+                  id="523a99f1-6172-467d-b799-09626b7c7894" involved="#41e56e21-f01f-4d37-b7e2-17eebe890584"
+                  source="#5a2ce829-e22f-43de-b42b-ae9e62f32c1c" target="#dc5c2d59-f60c-4221-880d-b48c45f92013"/>
+              <ownedFunctionalChainInvolvements xsi:type="org.polarsys.capella.core.data.fa:FunctionalChainInvolvementFunction"
+                  id="dc5c2d59-f60c-4221-880d-b48c45f92013" involved="#ad9c18fb-d482-4a4d-811e-d3c0180441ad"/>
+              <ownedFunctionalChainInvolvements xsi:type="org.polarsys.capella.core.data.fa:FunctionalChainInvolvementLink"
+                  id="516695f5-7f1d-4e5a-88ae-1f082c237c0a" involved="#a8c6ca79-acc2-4605-a0eb-0c9c93f892da"
+                  source="#dc5c2d59-f60c-4221-880d-b48c45f92013" target="#deb12b16-cc3e-45c5-a099-ddff29dd4e81"/>
+              <ownedFunctionalChainInvolvements xsi:type="org.polarsys.capella.core.data.fa:FunctionalChainInvolvementFunction"
+                  id="deb12b16-cc3e-45c5-a099-ddff29dd4e81" involved="#a8839df0-e13a-463e-8104-b43a286d5ee1"/>
+            </ownedFunctionalChains>
             <ownedFunctions xsi:type="org.polarsys.capella.core.data.ctx:SystemFunction"
                 id="9474e358-dd04-4c3d-8000-34be63c27255" name="Set Altitude">
               <ownedFunctionRealizations xsi:type="org.polarsys.capella.core.data.fa:FunctionRealization"

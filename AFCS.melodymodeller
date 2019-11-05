@@ -64,7 +64,7 @@
             <ownedFunctions xsi:type="org.polarsys.capella.core.data.oa:OperationalActivity"
                 id="cd440094-463c-4a16-bbb1-7863d8fa5ebc" name="Enable Autopilot Mode"/>
             <ownedFunctions xsi:type="org.polarsys.capella.core.data.oa:OperationalActivity"
-                id="bcdde495-fe55-4d3e-a980-76adb0236514" name="Set Autopilot Parameters"/>
+                id="bcdde495-fe55-4d3e-a980-76adb0236514" name="Get Flight Data"/>
           </ownedFunctions>
           <ownedFunctions xsi:type="org.polarsys.capella.core.data.oa:OperationalActivity"
               id="167bf6af-4da4-40fc-b39f-55c444b1883e" name="Control Navigation">
@@ -103,8 +103,6 @@
         </ownedOperationalCapabilities>
         <ownedOperationalCapabilities xsi:type="org.polarsys.capella.core.data.oa:OperationalCapability"
             id="c11899ca-a6ab-4b26-ad4c-50a46af3261c" name="Configure Autopilot">
-          <extends xsi:type="org.polarsys.capella.core.data.interaction:AbstractCapabilityExtend"
-              id="23219973-1428-4275-9734-7b8d1e92692c" extended="#d5b97bd5-6b28-401d-aa75-c430074a67fe"/>
           <ownedEntityOperationalCapabilityInvolvements xsi:type="org.polarsys.capella.core.data.oa:EntityOperationalCapabilityInvolvement"
               id="253c6f48-93d5-41bb-880a-bd3da9aa7f49" involved="#2ff6ec68-0c73-4e44-9456-2b7a9f3a09a6"/>
         </ownedOperationalCapabilities>
@@ -118,7 +116,9 @@
               id="549d5bf5-7407-4821-a9c3-9336f6b13cf0" involved="#3e5ccadd-e7eb-42d2-8ac5-1b5de3860af3"/>
         </ownedOperationalCapabilities>
         <ownedOperationalCapabilities xsi:type="org.polarsys.capella.core.data.oa:OperationalCapability"
-            id="d5b97bd5-6b28-401d-aa75-c430074a67fe" name="Set Autopilot Parameters">
+            id="d5b97bd5-6b28-401d-aa75-c430074a67fe" name="Get Flight Data">
+          <ownedAbstractFunctionAbstractCapabilityInvolvements xsi:type="org.polarsys.capella.core.data.interaction:AbstractFunctionAbstractCapabilityInvolvement"
+              id="e71c4916-8664-4ad1-ae71-9863d6f648e0" involved="#bcdde495-fe55-4d3e-a980-76adb0236514"/>
           <ownedEntityOperationalCapabilityInvolvements xsi:type="org.polarsys.capella.core.data.oa:EntityOperationalCapabilityInvolvement"
               id="8b9b9fd2-3b5a-4c18-9405-1e94cd96b206" involved="#4d5742bf-2ef1-4912-a692-2af10a3504f2"/>
         </ownedOperationalCapabilities>
@@ -213,16 +213,12 @@
               id="3ad9e5b5-8fe8-4e5d-882c-eac6c95dc78a" name="Set Flight Path" description="            ">
             <ownedFunctions xsi:type="org.polarsys.capella.core.data.ctx:SystemFunction"
                 id="9474e358-dd04-4c3d-8000-34be63c27255" name="Set Altitude">
-              <outputs xsi:type="org.polarsys.capella.core.data.fa:FunctionOutputPort"
-                  id="fbee2aff-583e-424e-94ff-be4337f8c587" name="outAltitude Stablization"/>
               <ownedFunctionRealizations xsi:type="org.polarsys.capella.core.data.fa:FunctionRealization"
                   id="2ce3377b-1ab0-4e00-a2c4-7a14a8f7e993" targetElement="#a9acfa8c-1581-4b05-8114-1d5e43a315b0"
                   sourceElement="#9474e358-dd04-4c3d-8000-34be63c27255"/>
             </ownedFunctions>
             <ownedFunctions xsi:type="org.polarsys.capella.core.data.ctx:SystemFunction"
                 id="4510287d-253c-4e95-86a2-aad3ff23befc" name="Set Waypoints">
-              <outputs xsi:type="org.polarsys.capella.core.data.fa:FunctionOutputPort"
-                  id="3e90311e-466f-4edf-88ea-682afc83fd75" name="outControl Yaw"/>
               <ownedFunctionRealizations xsi:type="org.polarsys.capella.core.data.fa:FunctionRealization"
                   id="32103ed2-707e-4190-9b73-3a487998ec45" targetElement="#48efc4e4-6719-4083-95a5-b62a680213b1"
                   sourceElement="#4510287d-253c-4e95-86a2-aad3ff23befc"/>
@@ -235,8 +231,6 @@
             </ownedFunctions>
             <ownedFunctions xsi:type="org.polarsys.capella.core.data.ctx:SystemFunction"
                 id="d506f34d-1a57-4c1a-bca9-0d37efdacb63" name="Set Veritical Speed">
-              <outputs xsi:type="org.polarsys.capella.core.data.fa:FunctionOutputPort"
-                  id="78174412-42bc-456b-b510-f3aa62f276da" name="outSpeed Stablization"/>
               <ownedFunctionRealizations xsi:type="org.polarsys.capella.core.data.fa:FunctionRealization"
                   id="3d9b1a66-fddd-4eb9-85e3-ee1a711c061d" targetElement="#a7a38a48-ed57-48fc-9a8b-6e4a757b5503"
                   sourceElement="#d506f34d-1a57-4c1a-bca9-0d37efdacb63"/>
@@ -244,42 +238,30 @@
             <ownedFunctions xsi:type="org.polarsys.capella.core.data.ctx:SystemFunction"
                 id="c34d6c84-5891-4358-8fc3-a89b543762dd" name="Take Inputs">
               <inputs xsi:type="org.polarsys.capella.core.data.fa:FunctionInputPort"
-                  id="32acbd01-699c-4437-92ba-d93444533d0f" name="FIP 1"/>
+                  id="16afd87d-4e54-4e11-8695-92ccaa72703e" name="FIP 1"/>
               <outputs xsi:type="org.polarsys.capella.core.data.fa:FunctionOutputPort"
-                  id="3718be5c-ed51-4d74-9546-99e8757fc027" name="FOP 1"/>
+                  id="0c33f03d-67b0-4f91-8433-052dd250b696" name="FOP 2"/>
             </ownedFunctions>
             <ownedFunctions xsi:type="org.polarsys.capella.core.data.ctx:SystemFunction"
-                id="e2a98503-d288-45dc-ad88-b049141bd8e2" name="Set Parameters">
+                id="ad9c18fb-d482-4a4d-811e-d3c0180441ad" name="Set Parameters">
               <inputs xsi:type="org.polarsys.capella.core.data.fa:FunctionInputPort"
-                  id="78cd599e-7284-4d3f-a0c5-6b13cc26ae0e" name="FIP 1"/>
+                  id="f398cd05-8294-4cd6-aed6-25cb4077e133" name="FIP 2"/>
+              <outputs xsi:type="org.polarsys.capella.core.data.fa:FunctionOutputPort"
+                  id="78174412-42bc-456b-b510-f3aa62f276da" name="outSpeed Stablization"/>
+              <outputs xsi:type="org.polarsys.capella.core.data.fa:FunctionOutputPort"
+                  id="fbee2aff-583e-424e-94ff-be4337f8c587" name="outAltitude Stablization"/>
+              <outputs xsi:type="org.polarsys.capella.core.data.fa:FunctionOutputPort"
+                  id="3e90311e-466f-4edf-88ea-682afc83fd75" name="outControl Yaw"/>
             </ownedFunctions>
             <ownedFunctionRealizations xsi:type="org.polarsys.capella.core.data.fa:FunctionRealization"
                 id="9a3769be-eeec-49ee-924c-e1e09086038f" targetElement="#d012a704-61a9-4233-8262-320c485fa032"
                 sourceElement="#3ad9e5b5-8fe8-4e5d-882c-eac6c95dc78a"/>
             <ownedFunctionalExchanges xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchange"
-                id="862b79f2-7439-4657-9392-1b24b0671330" name="Parameters" target="#78cd599e-7284-4d3f-a0c5-6b13cc26ae0e"
-                source="#3718be5c-ed51-4d74-9546-99e8757fc027"/>
+                id="41e56e21-f01f-4d37-b7e2-17eebe890584" name="Parameters" target="#f398cd05-8294-4cd6-aed6-25cb4077e133"
+                source="#0c33f03d-67b0-4f91-8433-052dd250b696"/>
           </ownedFunctions>
           <ownedFunctions xsi:type="org.polarsys.capella.core.data.ctx:SystemFunction"
               id="4cf8e8a5-7104-4268-a111-ab45f01a8eec" name="Configure Autopilot">
-            <ownedFunctions xsi:type="org.polarsys.capella.core.data.ctx:SystemFunction"
-                id="c0c1e833-8864-4596-839b-f51074acc8a1" name="Disable Autopilot Mode">
-              <ownedFunctionRealizations xsi:type="org.polarsys.capella.core.data.fa:FunctionRealization"
-                  id="85a1e901-7e11-4547-a40a-920b02744997" targetElement="#2d3b106d-ff52-4431-8779-47b060857d27"
-                  sourceElement="#c0c1e833-8864-4596-839b-f51074acc8a1"/>
-            </ownedFunctions>
-            <ownedFunctions xsi:type="org.polarsys.capella.core.data.ctx:SystemFunction"
-                id="b303315c-d213-479b-9706-ba17c4379b01" name="Enable Autopilot Mode">
-              <ownedFunctionRealizations xsi:type="org.polarsys.capella.core.data.fa:FunctionRealization"
-                  id="90387bf4-8a7d-4219-a247-ef8496cd34ed" targetElement="#cd440094-463c-4a16-bbb1-7863d8fa5ebc"
-                  sourceElement="#b303315c-d213-479b-9706-ba17c4379b01"/>
-            </ownedFunctions>
-            <ownedFunctions xsi:type="org.polarsys.capella.core.data.ctx:SystemFunction"
-                id="a8205761-da70-41f6-826c-848b2e34ef55" name="Set Autopilot Parameters">
-              <ownedFunctionRealizations xsi:type="org.polarsys.capella.core.data.fa:FunctionRealization"
-                  id="7292ae01-d442-4e56-be86-9bb7d60c50d4" targetElement="#bcdde495-fe55-4d3e-a980-76adb0236514"
-                  sourceElement="#a8205761-da70-41f6-826c-848b2e34ef55"/>
-            </ownedFunctions>
             <ownedFunctionRealizations xsi:type="org.polarsys.capella.core.data.fa:FunctionRealization"
                 id="303ab108-728c-4dd3-a0f8-b4cd3661614b" targetElement="#66d845bb-f3b5-477a-835e-da959d1bd6ce"
                 sourceElement="#4cf8e8a5-7104-4268-a111-ab45f01a8eec"/>
@@ -321,37 +303,52 @@
                 sourceElement="#c9c3a421-3b0e-4b9a-91b5-5f4f4287b874"/>
           </ownedFunctions>
           <ownedFunctions xsi:type="org.polarsys.capella.core.data.ctx:SystemFunction"
-              id="82ea1628-0728-4c0e-9e66-147303fb7f36" name="Configure Flight Parameters">
+              id="a8205761-da70-41f6-826c-848b2e34ef55" name="Get Flight Data">
             <outputs xsi:type="org.polarsys.capella.core.data.fa:FunctionOutputPort"
-                id="5a97d175-4e9a-4b25-af21-5382edf9c68f" name="FOP 1"/>
+                id="0ae9afeb-a6db-4a3e-92c1-1abd2381f3d2" name="FOP 1"/>
+            <ownedFunctionRealizations xsi:type="org.polarsys.capella.core.data.fa:FunctionRealization"
+                id="7292ae01-d442-4e56-be86-9bb7d60c50d4" targetElement="#bcdde495-fe55-4d3e-a980-76adb0236514"
+                sourceElement="#a8205761-da70-41f6-826c-848b2e34ef55"/>
+          </ownedFunctions>
+          <ownedFunctions xsi:type="org.polarsys.capella.core.data.ctx:SystemFunction"
+              id="c0c1e833-8864-4596-839b-f51074acc8a1" name="Disable Autopilot Mode">
+            <ownedFunctionRealizations xsi:type="org.polarsys.capella.core.data.fa:FunctionRealization"
+                id="85a1e901-7e11-4547-a40a-920b02744997" targetElement="#2d3b106d-ff52-4431-8779-47b060857d27"
+                sourceElement="#c0c1e833-8864-4596-839b-f51074acc8a1"/>
+          </ownedFunctions>
+          <ownedFunctions xsi:type="org.polarsys.capella.core.data.ctx:SystemFunction"
+              id="b303315c-d213-479b-9706-ba17c4379b01" name="Enable Autopilot Mode">
+            <ownedFunctionRealizations xsi:type="org.polarsys.capella.core.data.fa:FunctionRealization"
+                id="90387bf4-8a7d-4219-a247-ef8496cd34ed" targetElement="#cd440094-463c-4a16-bbb1-7863d8fa5ebc"
+                sourceElement="#b303315c-d213-479b-9706-ba17c4379b01"/>
           </ownedFunctions>
           <ownedFunctionRealizations xsi:type="org.polarsys.capella.core.data.fa:FunctionRealization"
               id="d16fb99b-0ed8-4dfe-a470-22169594196e" targetElement="#da06ace7-0362-452b-a765-b50bb05b9f19"
               sourceElement="#cf80d81b-cfc2-45f0-96f4-725715c71f60"/>
           <ownedFunctionalExchanges xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchange"
-              id="745ab491-fbfd-487d-8960-a910c9e700e1" name="Altitude Stablization"
+              id="745ab491-fbfd-487d-8960-a910c9e700e1" name="Altitude Parameters"
               target="#ba0b348f-673d-4e51-ab38-7769afc70e3e" source="#fbee2aff-583e-424e-94ff-be4337f8c587">
             <ownedFunctionalExchangeRealizations xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchangeRealization"
                 id="ece2b190-822e-4923-821d-15a9cb73f8b3" targetElement="#8fd5196e-4267-4555-b5c2-e9cd07057ccf"
                 sourceElement="#745ab491-fbfd-487d-8960-a910c9e700e1"/>
           </ownedFunctionalExchanges>
           <ownedFunctionalExchanges xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchange"
-              id="71d81d3b-7e99-41c1-9ca1-5715882bf87f" name="Speed Stablization"
-              target="#3b1a8ffd-d021-4725-b939-41d54097917c" source="#78174412-42bc-456b-b510-f3aa62f276da">
+              id="71d81d3b-7e99-41c1-9ca1-5715882bf87f" name="Speed Parameters" target="#3b1a8ffd-d021-4725-b939-41d54097917c"
+              source="#78174412-42bc-456b-b510-f3aa62f276da">
             <ownedFunctionalExchangeRealizations xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchangeRealization"
                 id="3bb5eadb-f776-460f-bf60-075b8e644f91" targetElement="#b75a24ba-a234-4134-a329-66127fbdc0ee"
                 sourceElement="#71d81d3b-7e99-41c1-9ca1-5715882bf87f"/>
           </ownedFunctionalExchanges>
           <ownedFunctionalExchanges xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchange"
-              id="a8c6ca79-acc2-4605-a0eb-0c9c93f892da" name="Control Yaw" target="#3c430c01-c456-4bf1-958b-f81e0003ca7c"
+              id="a8c6ca79-acc2-4605-a0eb-0c9c93f892da" name="Yaw Parameters" target="#3c430c01-c456-4bf1-958b-f81e0003ca7c"
               source="#3e90311e-466f-4edf-88ea-682afc83fd75">
             <ownedFunctionalExchangeRealizations xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchangeRealization"
                 id="e5baafe0-286d-49b1-95e9-1664414073d7" targetElement="#569564d3-529b-4a51-b0d2-3af48554a5da"
                 sourceElement="#a8c6ca79-acc2-4605-a0eb-0c9c93f892da"/>
           </ownedFunctionalExchanges>
           <ownedFunctionalExchanges xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchange"
-              id="8903e1b6-a434-4197-bf7b-9a888afc58f4" name="Flight Inputs" target="#32acbd01-699c-4437-92ba-d93444533d0f"
-              source="#5a97d175-4e9a-4b25-af21-5382edf9c68f"/>
+              id="0c61d4bb-0dcd-4feb-bd26-068a80bfb0cd" name="Flight Data" target="#16afd87d-4e54-4e11-8695-92ccaa72703e"
+              source="#0ae9afeb-a6db-4a3e-92c1-1abd2381f3d2"/>
         </ownedSystemFunctions>
       </ownedFunctionPkg>
       <ownedAbstractCapabilityPkg xsi:type="org.polarsys.capella.core.data.ctx:CapabilityPkg"
@@ -523,8 +520,6 @@
             name="Safety System" abstractType="#615e89b0-e2b0-4262-aecd-02978ccc2fd3"/>
         <ownedFeatures xsi:type="org.polarsys.capella.core.data.cs:Part" id="c3448a35-4e8a-4afa-82bf-9e8f2bdf76aa"
             name="AFCS" abstractType="#17f5c62c-117a-4cf8-ae25-f03a4584372c"/>
-        <ownedFeatures xsi:type="org.polarsys.capella.core.data.cs:Part" id="3847c6a6-68d2-4806-a85c-d5e0265d52d7"
-            name="A 7" abstractType="#f08587f1-d1b1-4839-9d8c-fd31a382f7e5"/>
       </ownedSystemContext>
       <ownedSystem xsi:type="org.polarsys.capella.core.data.ctx:System" id="60c8cf12-7c46-42a8-9473-8155a42d7997"
           name="System">
@@ -638,12 +633,6 @@
               id="706b0c87-4c70-48be-9bec-cb10852f9dfe" targetElement="#4d5742bf-2ef1-4912-a692-2af10a3504f2"
               sourceElement="#2eb66bce-59d3-45bd-988f-d10ad1a3ee3d"/>
         </ownedActors>
-        <ownedActors xsi:type="org.polarsys.capella.core.data.ctx:Actor" id="f08587f1-d1b1-4839-9d8c-fd31a382f7e5"
-            name="A 7">
-          <ownedFunctionalAllocation xsi:type="org.polarsys.capella.core.data.fa:ComponentFunctionalAllocation"
-              id="9c1a3eec-2fb4-4abd-86f5-591228d33f82" targetElement="#82ea1628-0728-4c0e-9e66-147303fb7f36"
-              sourceElement="#f08587f1-d1b1-4839-9d8c-fd31a382f7e5"/>
-        </ownedActors>
       </ownedActorPkg>
       <ownedMissionPkg xsi:type="org.polarsys.capella.core.data.ctx:MissionPkg" id="afd49eac-b5ca-4b87-95b6-efee12a6050c"
           name="Missions"/>
@@ -705,17 +694,9 @@
             <ownedFunctions xsi:type="org.polarsys.capella.core.data.la:LogicalFunction"
                 id="7c88f476-df6a-4634-850d-988495ae2a85" name="Take Inputs">
               <inputs xsi:type="org.polarsys.capella.core.data.fa:FunctionInputPort"
-                  id="4982dde8-2d3f-4129-b36b-32d60489c6ea" name="FIP 1">
-                <ownedPortRealizations xsi:type="org.polarsys.capella.core.data.information:PortRealization"
-                    id="18b0f73c-3637-4823-86e4-857128949c22" targetElement="#32acbd01-699c-4437-92ba-d93444533d0f"
-                    sourceElement="#4982dde8-2d3f-4129-b36b-32d60489c6ea"/>
-              </inputs>
+                  id="4982dde8-2d3f-4129-b36b-32d60489c6ea" name="FIP 1"/>
               <outputs xsi:type="org.polarsys.capella.core.data.fa:FunctionOutputPort"
-                  id="b0b4619f-0e24-47a2-823b-930ec4425447" name="FOP 1">
-                <ownedPortRealizations xsi:type="org.polarsys.capella.core.data.information:PortRealization"
-                    id="5cab4fc6-58c4-4675-b397-fb5464caf6d0" targetElement="#3718be5c-ed51-4d74-9546-99e8757fc027"
-                    sourceElement="#b0b4619f-0e24-47a2-823b-930ec4425447"/>
-              </outputs>
+                  id="b0b4619f-0e24-47a2-823b-930ec4425447" name="FOP 1"/>
               <ownedFunctionRealizations xsi:type="org.polarsys.capella.core.data.fa:FunctionRealization"
                   id="22c0b4da-39cb-41da-aae4-ae968071dbe7" targetElement="#c34d6c84-5891-4358-8fc3-a89b543762dd"
                   sourceElement="#7c88f476-df6a-4634-850d-988495ae2a85"/>
@@ -723,37 +704,19 @@
             <ownedFunctions xsi:type="org.polarsys.capella.core.data.la:LogicalFunction"
                 id="356e5cbe-0666-46f2-9bd4-620da961c751" name="Set Parameters">
               <inputs xsi:type="org.polarsys.capella.core.data.fa:FunctionInputPort"
-                  id="2452d65e-48ac-4f88-a534-67093113aafe" name="FIP 1">
-                <ownedPortRealizations xsi:type="org.polarsys.capella.core.data.information:PortRealization"
-                    id="0e24a614-ec3b-4043-b3f5-70de610e6810" targetElement="#78cd599e-7284-4d3f-a0c5-6b13cc26ae0e"
-                    sourceElement="#2452d65e-48ac-4f88-a534-67093113aafe"/>
-              </inputs>
-              <ownedFunctionRealizations xsi:type="org.polarsys.capella.core.data.fa:FunctionRealization"
-                  id="84a1077c-ba3c-4eaf-9799-21b16cc80ac5" targetElement="#e2a98503-d288-45dc-ad88-b049141bd8e2"
-                  sourceElement="#356e5cbe-0666-46f2-9bd4-620da961c751"/>
+                  id="2452d65e-48ac-4f88-a534-67093113aafe" name="FIP 1"/>
             </ownedFunctions>
             <ownedFunctionRealizations xsi:type="org.polarsys.capella.core.data.fa:FunctionRealization"
                 id="2d6d1c40-f996-4021-8d93-04f417c994ae" targetElement="#3ad9e5b5-8fe8-4e5d-882c-eac6c95dc78a"
                 sourceElement="#0b542736-fa2a-4488-bacf-fd3886a28cbd"/>
             <ownedFunctionalExchanges xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchange"
                 id="395ffe6c-d6e8-44a6-a86b-139e5758ff46" name="Parameters" target="#2452d65e-48ac-4f88-a534-67093113aafe"
-                source="#b0b4619f-0e24-47a2-823b-930ec4425447">
-              <ownedFunctionalExchangeRealizations xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchangeRealization"
-                  id="af5bea6c-b861-4987-82a4-7aae8bbecfa5" targetElement="#862b79f2-7439-4657-9392-1b24b0671330"
-                  sourceElement="#395ffe6c-d6e8-44a6-a86b-139e5758ff46"/>
-            </ownedFunctionalExchanges>
+                source="#b0b4619f-0e24-47a2-823b-930ec4425447"/>
           </ownedFunctions>
           <ownedFunctions xsi:type="org.polarsys.capella.core.data.la:LogicalFunction"
               id="87170c38-09b1-494c-a2fc-d8ec4be7540f" name="Configure Flight Parameters">
             <outputs xsi:type="org.polarsys.capella.core.data.fa:FunctionOutputPort"
-                id="073cd00b-868a-4459-a371-c6fceace0cdf" name="FOP 1">
-              <ownedPortRealizations xsi:type="org.polarsys.capella.core.data.information:PortRealization"
-                  id="4d10cd18-be09-4013-aa3f-558b890abbb4" targetElement="#5a97d175-4e9a-4b25-af21-5382edf9c68f"
-                  sourceElement="#073cd00b-868a-4459-a371-c6fceace0cdf"/>
-            </outputs>
-            <ownedFunctionRealizations xsi:type="org.polarsys.capella.core.data.fa:FunctionRealization"
-                id="df047edb-aacb-4c3c-a507-f2ca560d9d16" targetElement="#82ea1628-0728-4c0e-9e66-147303fb7f36"
-                sourceElement="#87170c38-09b1-494c-a2fc-d8ec4be7540f"/>
+                id="073cd00b-868a-4459-a371-c6fceace0cdf" name="FOP 1"/>
           </ownedFunctions>
           <ownedFunctions xsi:type="org.polarsys.capella.core.data.la:LogicalFunction"
               id="c5684503-5340-4ced-997b-5a85d1ad1a5b" name="Control Navigation">
@@ -817,11 +780,7 @@
           </ownedFunctionalExchanges>
           <ownedFunctionalExchanges xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchange"
               id="bcea58ce-a1c0-494b-b8c1-9e1fc9aac690" name="Flight Inputs" target="#4982dde8-2d3f-4129-b36b-32d60489c6ea"
-              source="#073cd00b-868a-4459-a371-c6fceace0cdf">
-            <ownedFunctionalExchangeRealizations xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchangeRealization"
-                id="26890617-1696-4989-a730-dcf70bfac640" targetElement="#8903e1b6-a434-4197-bf7b-9a888afc58f4"
-                sourceElement="#bcea58ce-a1c0-494b-b8c1-9e1fc9aac690"/>
-          </ownedFunctionalExchanges>
+              source="#073cd00b-868a-4459-a371-c6fceace0cdf"/>
         </ownedLogicalFunctions>
       </ownedFunctionPkg>
       <ownedAbstractCapabilityPkg xsi:type="org.polarsys.capella.core.data.la:CapabilityRealizationPkg"

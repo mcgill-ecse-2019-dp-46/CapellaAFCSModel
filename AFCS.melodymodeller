@@ -213,7 +213,7 @@
               sourceElement="#c9e010cc-acf7-4089-a83f-2e32aa76b4a3"/>
         </ownedEntities>
         <ownedEntities xsi:type="org.polarsys.capella.core.data.oa:Entity" id="4d5742bf-2ef1-4912-a692-2af10a3504f2"
-            name="Air Data System">
+            name="Air Data System" description="">
           <ownedFunctionalAllocation xsi:type="org.polarsys.capella.core.data.fa:ComponentFunctionalAllocation"
               id="72a44bd9-6d11-4e8b-b11f-0670ec4af7c2" targetElement="#bcdde495-fe55-4d3e-a980-76adb0236514"
               sourceElement="#4d5742bf-2ef1-4912-a692-2af10a3504f2"/>
@@ -1092,9 +1092,9 @@
           <ownedFunctions xsi:type="org.polarsys.capella.core.data.la:LogicalFunction"
               id="5b2dd537-6f53-46d8-80c3-0e3f61ebb738" name="Acquire Navigation Data"/>
           <ownedFunctions xsi:type="org.polarsys.capella.core.data.la:LogicalFunction"
-              id="3d90dac4-e002-493c-af3f-7e368bc07406" name="LogicalFunction 12"/>
+              id="3d90dac4-e002-493c-af3f-7e368bc07406" name="Monitor Safety Metrics"/>
           <ownedFunctions xsi:type="org.polarsys.capella.core.data.la:LogicalFunction"
-              id="e59cdddd-f2ca-413b-adb4-161902fd359c" name="LogicalFunction 13"/>
+              id="e59cdddd-f2ca-413b-adb4-161902fd359c" name="Acquire Data Measurements"/>
           <ownedFunctionRealizations xsi:type="org.polarsys.capella.core.data.fa:FunctionRealization"
               id="00574003-208c-409f-b975-d45152bea26a" targetElement="#cf80d81b-cfc2-45f0-96f4-725715c71f60"
               sourceElement="#4c8e9451-e21e-427b-80fe-4caae9b4bf85"/>

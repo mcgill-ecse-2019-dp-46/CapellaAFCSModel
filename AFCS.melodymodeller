@@ -158,35 +158,7 @@
       <ownedEntityPkg xsi:type="org.polarsys.capella.core.data.oa:EntityPkg" id="c67831a3-719e-450d-b5f7-27e904cfb5dc"
           name="Operational Entities">
         <ownedEntities xsi:type="org.polarsys.capella.core.data.oa:OperationalActor"
-            id="2ff6ec68-0c73-4e44-9456-2b7a9f3a09a6" name="Pilot" description="">
-          <ownedFunctionalAllocation xsi:type="org.polarsys.capella.core.data.fa:ComponentFunctionalAllocation"
-              id="9158462c-53c8-4a6e-9657-51519ed956c6" targetElement="#a9acfa8c-1581-4b05-8114-1d5e43a315b0"
-              sourceElement="#2ff6ec68-0c73-4e44-9456-2b7a9f3a09a6"/>
-          <ownedFunctionalAllocation xsi:type="org.polarsys.capella.core.data.fa:ComponentFunctionalAllocation"
-              id="3f1ab022-fc8f-48b5-bc61-29ade4e159f6" targetElement="#48efc4e4-6719-4083-95a5-b62a680213b1"
-              sourceElement="#2ff6ec68-0c73-4e44-9456-2b7a9f3a09a6"/>
-          <ownedFunctionalAllocation xsi:type="org.polarsys.capella.core.data.fa:ComponentFunctionalAllocation"
-              id="40fa32a7-6df3-421e-84ae-a0edfefa6319" targetElement="#4d3bd65f-1dcd-4f6b-8045-4976e091844a"
-              sourceElement="#2ff6ec68-0c73-4e44-9456-2b7a9f3a09a6"/>
-          <ownedFunctionalAllocation xsi:type="org.polarsys.capella.core.data.fa:ComponentFunctionalAllocation"
-              id="a8a0c8e6-9904-4b81-a434-9bc7582d2e0b" targetElement="#2d3b106d-ff52-4431-8779-47b060857d27"
-              sourceElement="#2ff6ec68-0c73-4e44-9456-2b7a9f3a09a6"/>
-          <ownedFunctionalAllocation xsi:type="org.polarsys.capella.core.data.fa:ComponentFunctionalAllocation"
-              id="c9ce0f60-2bc5-4cdb-9d4f-ef85cc9e62c4" targetElement="#ff6194ae-9335-4a95-8c14-5dbdb764eaf9"
-              sourceElement="#2ff6ec68-0c73-4e44-9456-2b7a9f3a09a6"/>
-          <ownedFunctionalAllocation xsi:type="org.polarsys.capella.core.data.fa:ComponentFunctionalAllocation"
-              id="d2b7a5df-d410-406c-b842-1d3b998d4c9f" targetElement="#719a8740-0d1c-47f0-b1a3-d2f4dd63c0b3"
-              sourceElement="#2ff6ec68-0c73-4e44-9456-2b7a9f3a09a6"/>
-          <ownedFunctionalAllocation xsi:type="org.polarsys.capella.core.data.fa:ComponentFunctionalAllocation"
-              id="68e26d8d-379f-45f8-b088-2db6ecc23fb3" targetElement="#48bec25c-16c9-4f8e-a436-fa32620ac3de"
-              sourceElement="#2ff6ec68-0c73-4e44-9456-2b7a9f3a09a6"/>
-          <ownedFunctionalAllocation xsi:type="org.polarsys.capella.core.data.fa:ComponentFunctionalAllocation"
-              id="2f93015c-b921-4d96-b669-9c0fed1ffae7" targetElement="#a7a38a48-ed57-48fc-9a8b-6e4a757b5503"
-              sourceElement="#2ff6ec68-0c73-4e44-9456-2b7a9f3a09a6"/>
-          <ownedFunctionalAllocation xsi:type="org.polarsys.capella.core.data.fa:ComponentFunctionalAllocation"
-              id="a4028df9-e75f-4add-a660-26e64a159b01" targetElement="#cd440094-463c-4a16-bbb1-7863d8fa5ebc"
-              sourceElement="#2ff6ec68-0c73-4e44-9456-2b7a9f3a09a6"/>
-        </ownedEntities>
+            id="2ff6ec68-0c73-4e44-9456-2b7a9f3a09a6" name="Pilot" description=""/>
         <ownedEntities xsi:type="org.polarsys.capella.core.data.oa:Entity" id="89154189-70e9-4dee-8b39-8d2a4dc3651e"
             name="Safety System">
           <ownedFunctionalAllocation xsi:type="org.polarsys.capella.core.data.fa:ComponentFunctionalAllocation"
@@ -210,6 +182,33 @@
             name="Autopilot">
           <ownedFunctionalAllocation xsi:type="org.polarsys.capella.core.data.fa:ComponentFunctionalAllocation"
               id="be51e064-a8e5-4a45-9cfa-22a228eea24b" targetElement="#bec83f45-82ee-46dc-bd7f-697475da3306"
+              sourceElement="#c9e010cc-acf7-4089-a83f-2e32aa76b4a3"/>
+          <ownedFunctionalAllocation xsi:type="org.polarsys.capella.core.data.fa:ComponentFunctionalAllocation"
+              id="a4028df9-e75f-4add-a660-26e64a159b01" targetElement="#cd440094-463c-4a16-bbb1-7863d8fa5ebc"
+              sourceElement="#c9e010cc-acf7-4089-a83f-2e32aa76b4a3"/>
+          <ownedFunctionalAllocation xsi:type="org.polarsys.capella.core.data.fa:ComponentFunctionalAllocation"
+              id="c9ce0f60-2bc5-4cdb-9d4f-ef85cc9e62c4" targetElement="#ff6194ae-9335-4a95-8c14-5dbdb764eaf9"
+              sourceElement="#c9e010cc-acf7-4089-a83f-2e32aa76b4a3"/>
+          <ownedFunctionalAllocation xsi:type="org.polarsys.capella.core.data.fa:ComponentFunctionalAllocation"
+              id="3f1ab022-fc8f-48b5-bc61-29ade4e159f6" targetElement="#48efc4e4-6719-4083-95a5-b62a680213b1"
+              sourceElement="#c9e010cc-acf7-4089-a83f-2e32aa76b4a3"/>
+          <ownedFunctionalAllocation xsi:type="org.polarsys.capella.core.data.fa:ComponentFunctionalAllocation"
+              id="d2b7a5df-d410-406c-b842-1d3b998d4c9f" targetElement="#719a8740-0d1c-47f0-b1a3-d2f4dd63c0b3"
+              sourceElement="#c9e010cc-acf7-4089-a83f-2e32aa76b4a3"/>
+          <ownedFunctionalAllocation xsi:type="org.polarsys.capella.core.data.fa:ComponentFunctionalAllocation"
+              id="40fa32a7-6df3-421e-84ae-a0edfefa6319" targetElement="#4d3bd65f-1dcd-4f6b-8045-4976e091844a"
+              sourceElement="#c9e010cc-acf7-4089-a83f-2e32aa76b4a3"/>
+          <ownedFunctionalAllocation xsi:type="org.polarsys.capella.core.data.fa:ComponentFunctionalAllocation"
+              id="2f93015c-b921-4d96-b669-9c0fed1ffae7" targetElement="#a7a38a48-ed57-48fc-9a8b-6e4a757b5503"
+              sourceElement="#c9e010cc-acf7-4089-a83f-2e32aa76b4a3"/>
+          <ownedFunctionalAllocation xsi:type="org.polarsys.capella.core.data.fa:ComponentFunctionalAllocation"
+              id="68e26d8d-379f-45f8-b088-2db6ecc23fb3" targetElement="#48bec25c-16c9-4f8e-a436-fa32620ac3de"
+              sourceElement="#c9e010cc-acf7-4089-a83f-2e32aa76b4a3"/>
+          <ownedFunctionalAllocation xsi:type="org.polarsys.capella.core.data.fa:ComponentFunctionalAllocation"
+              id="9158462c-53c8-4a6e-9657-51519ed956c6" targetElement="#a9acfa8c-1581-4b05-8114-1d5e43a315b0"
+              sourceElement="#c9e010cc-acf7-4089-a83f-2e32aa76b4a3"/>
+          <ownedFunctionalAllocation xsi:type="org.polarsys.capella.core.data.fa:ComponentFunctionalAllocation"
+              id="a8a0c8e6-9904-4b81-a434-9bc7582d2e0b" targetElement="#2d3b106d-ff52-4431-8779-47b060857d27"
               sourceElement="#c9e010cc-acf7-4089-a83f-2e32aa76b4a3"/>
         </ownedEntities>
         <ownedEntities xsi:type="org.polarsys.capella.core.data.oa:Entity" id="4d5742bf-2ef1-4912-a692-2af10a3504f2"
